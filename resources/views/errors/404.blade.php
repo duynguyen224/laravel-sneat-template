@@ -41,8 +41,8 @@
                     <div class="row">
                         <div class="col-lg-8 col-12 col-sm-10 offset-lg-2 offset-sm-1">
                             <h1 class="m-0">404</h1>
-                            <h6>Page not found - Dantri.com.vn</h6>
-                            <a href="{{route('admin.dashboard')}}" class="font-bold text-lg">Go to dashboard admin</a>
+                            <h6>Page not found</h6>
+                            <a href="{{route('admin.dashboard')}}" class="font-bold text-lg">Go to Admin Site</a>
                         </div>
                     </div>
                 </div>

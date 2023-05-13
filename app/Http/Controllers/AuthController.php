@@ -45,7 +45,7 @@ class AuthController extends Controller
                     break;
                 default:
                     $request->session()->regenerate();
-                    return redirect()->route('home');
+                    return redirect()->route('login');
                     break;
             }
         } else {
