@@ -32,9 +32,6 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
-    {{-- Billboardjs css --}}
-    <link rel="stylesheet" href="{{ asset('admin/plugins/billboardjs/billboard.css') }}" />
-
     <!-- Page CSS -->
     <script src="{{ asset('admin/assets/vendor/js/helpers.js') }}"></script>
 
@@ -70,6 +67,10 @@
     @else
         @include('errors.no-permission')
     @endhasanyrole
+
+    {{-- Share component --}}
+    @include('admin.share.modal-delete')
+    {{-- End of share component --}}
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

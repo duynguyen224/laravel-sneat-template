@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,18 +47,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
              */
             Route::group(['prefix' => 'manage'], function () {
                 /**
-                 * Suppliers Routes
+                 * User Routes
                  */
-                // Route::group(['prefix' => 'suppliers'], function () {
-                //     Route::controller(SupplierController::class)->group(function () {
-                //         Route::get('/', 'index')->name('admin.suppliers.index');
-                //         Route::get('/create', 'create')->name('admin.suppliers.create');
-                //         Route::post('/store', 'store')->name('admin.suppliers.store');
-                //         Route::get('/{supplier}/edit', 'edit')->name('admin.suppliers.edit');
-                //         Route::post('/{supplier}/update', 'update')->name('admin.suppliers.update');
-                //         Route::post('/{supplier}/destroy', 'destroy')->name('admin.suppliers.destroy');
-                //     });
-                // });
+                Route::group(['prefix' => 'users'], function () {
+                    Route::controller(UserController::class)->group(function () {
+                        Route::get('/', 'index')->name('admin.users.index');
+                        Route::get('/create', 'create')->name('admin.users.create');
+                        Route::post('/store', 'store')->name('admin.users.store');
+                        Route::get('/{user}/edit', 'edit')->name('admin.users.edit');
+                        Route::post('/{user}/update', 'update')->name('admin.users.update');
+                        Route::post('/{user}/destroy', 'destroy')->name('admin.users.destroy');
+                    });
+                });
             });
         });
     });

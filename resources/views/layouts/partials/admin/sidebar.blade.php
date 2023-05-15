@@ -63,6 +63,12 @@
                 <div>Tổng quan</div>
             </a>
         </li>
+        <li class="{{ request()->is('admin/manage*') ? 'active' : '' }} menu-item">
+            <a href="{{ route('admin.users.index') }}" class="menu-link">
+                <i class="fa-solid fa-chart-simple">&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                <div>Users</div>
+            </a>
+        </li>
         <li class="{{ request()->is('admin/serves*') ? 'active open' : '' }} menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="fa-solid fa-list">&nbsp;&nbsp;&nbsp;&nbsp;</i>

@@ -17,6 +17,12 @@ class AppServiceProvider extends ServiceProvider
             \App\Services\Interface\IDashboardService::class,
             \App\Services\Impl\DashboardService::class
         );
+
+        // User 
+        $this->app->singleton(
+            \App\Services\Interface\IUserService::class,
+            \App\Services\Impl\UserService::class
+        );
     }
 
     /**
