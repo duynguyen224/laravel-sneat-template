@@ -17,11 +17,10 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $res = $this->userService->index($request);
+        // $res = $this->userService->index($request);
+        $users = User::where('id', '>', 1)->orderBy('created_at', 'desc')->paginate(10);
 
-        return view('admin.users.index', [
-            'users' => $res['users']
-        ]);
+        return view('admin.users.index', compact('users'));
     }
 
     public function create()
@@ -31,6 +30,17 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'email' => 'email'
+        ]);
+
+        $email = $request->get('email');
+        
+        $user = new User();
+        $user->email = $email;
+        $user->save();
+
+        return redirect()->route('admin.users.index');
     }
 
     public function edit(User $user)
@@ -42,9 +52,22 @@ class UserController extends Controller
 
     public function update(User $user, Request $request)
     {
+        $request->validate([
+            'email' => 'email'
+        ]);
+
+        $email = $request->get('email');
+
+        $user->email = $email;
+        $user->save();
+
+        return redirect()->route('admin.users.index');
     }
 
     public function destroy(User $user)
     {
+        $user->delete();
+        
+        return redirect()->route('admin.users.index');
     }
 }

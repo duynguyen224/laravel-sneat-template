@@ -28,29 +28,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label class="col-3 col-form-label" for="basic-default-name">Select <span
-                                    class="text-red">(*)</span></label>
-                            <div class="col-9">
-                                <select class="form-select">
-                                    <option selected disabled>Chọn nhân viên</option>
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="html5-date-input" class="col-3 col-form-label">Date</label>
-                            <div class="col-9">
-                                <input class="form-control" type="date" value="2021-06-18" id="html5-date-input">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="exampleFormControlTextarea1" class="col-3 col-form-label">Example textarea</label>
-                            <div class="col-9">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="row mt-3 text-end">

@@ -5,4 +5,9 @@ $(document).ready(function () {
         const url = $(this).find(".btn-edit").attr("href");
         document.location.href = url;
     });
+
+    $('#btn-confirm-destroy').click(function(){
+        alert('Call xóa api');
+        window.location.reload();
+    })
 });
