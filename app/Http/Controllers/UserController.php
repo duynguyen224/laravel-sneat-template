@@ -30,21 +30,20 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validateData = $request->validate([
             'email' => 'email'
         ]);
 
-        $email = $request->get('email');
-        
-        $user = new User();
-        $user->email = $email;
-        $user->save();
+        $validateData['password'] = 'default password';
+
+        User::create($validateData);
 
         return redirect()->route('admin.users.index');
     }
 
     public function edit(User $user)
     {
+        dd($user);
         return view('admin.users.edit', [
             'user' => $user,
         ]);
